@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    color: #1E1E1E;
+    background-color: #0a0a0a;
+    
+    background-image:
+        repeating-linear-gradient(
+            to right, transparent 0 150px, rgba(44, 43, 43, 0.067) 150px 151px
+        ),
+        repeating-linear-gradient(
+            to bottom, transparent 0 150px, #0001 150px 151px
+        ),
+        linear-gradient(to right, rgba(205, 205, 205, 0.8), rgba(205, 205, 205, 0.8)), 
+        url(background.jpg);
+
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center; /* Centers the background image */
+}
+
+*{
+    padding: 0;
+/* Navbar */
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    /* background: linear-gradient(to right, #585858, #52504f);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); */
+    position: relative; /* Fix navbar position */
+    z-index: 10;
+    height: 40px;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+.navbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    text-shadow: 0px 0px 10px yellow;
+}
+
+/* Header Section (Now Positioned as Background) */
+header {
+    width: 100%;
+    height: 100vh;
+    position: absolute; /* Places it behind the banner */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+    z-index: -1;
+   
+}
+
+/* Header Text Styling */
+header .left {
+    max-width: 1500px;
+}
+
+header h1 {
+    font-family: "Karantina", system-ui;
+    font-size: 7vw; /* Adjusts with screen */
+    line-height: 0.9em;
+    color: #7e7d7b;
+    
+}
+
+header p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: white;
+    margin-top: 350px;
+}
+}
+.banner{
+    margin-top: -50px;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.product{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 170px;
+    z-index: 2;
+    width: 500px;
+    transition: 0.7s;
+}
+.product .soda{
+    position: absolute;
+    bottom: 0;
+    left: calc(50%);
+    transform: translateX(-50%);
+}
+.soda1{
+    --left: 0px;
+    background: 
+       
+        url("Reviva\ \(2\).png") var(--left),
+        url(mockup.png) 0 0;
+    background-size: auto 100%;
+    width: 280px;
+    aspect-ratio: 2 / 4;
+    background-blend-mode: multiply;
+    transition: 0.8s;
+    mask-image: url(mockup.png);
+    mask-size: auto 100%;
+}
+
+.soda2{
+    --left: 0px;
+    background: 
+       
+        url("Reviva\ \(1\).png") var(--left),
+        url(mockup.png) 0 0;
+    background-size: auto 100%;
+    width: 280px;
+    aspect-ratio: 2 / 4;
+    background-blend-mode: multiply;
+    transition: 0.8s;
+    mask-image: url(mockup.png);
+    mask-size: auto 100%;
+}
+.soda:nth-child(2){
+    opacity: 0;
+}
+.product:hover{
+    bottom: 300px;
+}
+.product:hover .soda:nth-child(2){
+    opacity: 1;
+    --left: 650px;
+}
+.product:hover .soda:nth-child(1){
+    opacity: 0;
+    --left: 500px;
+}
+
+.rock{
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    pointer-events: none;
+}
+.rock img:nth-child(1){
+    position: absolute;
+    height: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    transition: 0.7s;
+    z-index: 1;
+}
+.rock img:nth-child(2){
+    position: absolute;
+    height: 50%;
+    left: 0;
+    bottom: 0;
+    transition: 0.7s;
+}
+.rock img:nth-child(3){
+    position: absolute;
+    height: 100%;
+    right: 0;
+    bottom: -100px;
+    rotate: -25deg;
+    transition: 0.7s;
+}
+.banner:has(.product:hover) .rock img:nth-child(1){
+    transform: translateX(-50%) translateY(50px);
+}
+.banner:has(.product:hover) .rock img:nth-child(2){
+    transform: translateX(-100px) translateY(100px);
+}
+.banner:has(.product:hover) .rock img:nth-child(3){
+    transform: translateX(100px) translateY(100px);
+}
+@media screen and (max-width: 1023px) {
+    
+    .soda{
+        width: 400px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .soda{
+        width: 250px;
+    }
+    header img{
+        display: none;
+    }
+    header .author{
+        width: 100%;
+    }
+
+}
